@@ -1,1 +1,22 @@
-<h1>{{title}}</h1>
+
+
+<html>
+    <head>
+        <link rel="icon" href="/img/download.jpg">
+          <title>clock</title>
+          <h1>{{title}}</h1>
+          {{>header}}
+ <link rel="stylesheet"href="/css/style.css">
+ 
+    </head>
+    <body>
+      
+        <script src="/js/time.js"></script>
+        <p id="timersec">00:00:00</p>
+        <p id="timermin"></p>
+        <input id="hours" placeholder="hours" size=2>
+  <input id="minutes" placeholder="minutes" size=2>      
+<input id="sec" placeholder="seconds" size=2>
+<button onclick="timer()">start</button>
+</body>
+</html>

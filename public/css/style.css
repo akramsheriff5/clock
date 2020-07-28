@@ -4,7 +4,7 @@ body{
     align-items: center;
     justify-content: center;
     background-color: royalblue;
-flex-grow: inherit;
+flex-grow:1;
 }
 
 h1{
