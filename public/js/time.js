@@ -6,7 +6,7 @@ var hours=now.getHours();
 var mins =now.getMinutes();
 var sec=now.getSeconds();
 
-document.getElementById("demo").innerHTML=hours+":"+mins+":"+sec+"</br>";
+document.getElementById("demo").innerHTML=hours+":"+mins+":"+sec;
 }
 
 setInterval(()=>{
@@ -70,47 +70,48 @@ document.getElementById("resetbtn").disabled=false;
 
 // timer
 
-// timer=()=>{
-//     var hours=document.getElementById("hours").value;
+timer=()=>{
+    // var hours=document.getElementById("hours").value;
 // var minutes=document.getElementById("minutes").value;
 // var seconds=document.getElementById("sec").value;
+var minutes=document.getElementById("minutes").value;
+var seconds=minutes*60||document.getElementById("sec").value;
 
+    // document.getElementById("timersec").innerHTML=(minutes+":"+seconds)
 
-// setInterval(()=>{
-//     if(seconds>0){
-//     seconds=seconds-1;
-//     // document.getElementById("timersec").innerHTML=(seconds)
-//     document.getElementById("timersec").innerHTML=(hours+":"+minutes+":"+seconds)
-//     }
-// },1000)
-
-// setInterval(()=>{
-//     if(minutes>0){
-//     minutes=minutes-1;
-//     // document.getElementById("timermin").innerHTML=(minutes)
-//     document.getElementById("timersec").innerHTML=(hours+":"+minutes+":"+seconds)
-//     }
-// },60000)
-
-// setInterval(()=>{
-//     if(hours>0){
-//   hours=hours-1;
-//   document.getElementById("timersec").innerHTML=(hours+":"+minutes+":"+seconds)
-//   }
-// },3600000)
-// // document.getElementById("timersec").innerHTML=(hours+":"+minutes+":"+seconds)
-// }
-
-
-var userminutes=10;
-
-//  const minutes=setInterval(()=>{
-//     if(userminutes>0&&userminutes<59) {
-//     userminutes--;
-//      console.log(userminutes)
-//     }
+        
+           mysec=  setInterval(() => {
+            if(seconds>=0){
+                seconds=seconds--;
+                document.getElementById("timersec").innerHTML=("00"+":"+second)
+            }
+            },1000);
     
-//  },600)
+    
+  
+
+         mymin=setInterval(() => {
+            if(minutes<=60&&minutes>=0){
+            if(seconds>=0){   
+                second=Math.floor(seconds%60)
+                minutes = Math.floor(seconds / 60); 
+                //  seconds - Math.round(minutes * 60);    
+            
+              seconds=seconds-1;
+              document.getElementById("timersec").innerHTML=(minutes+":"+second)
+            }
+        }
+            
+        },1000);
+    }
+    
+reset=()=>{
+clearInterval(mymin)
+clearInterval(mysec)
+document.getElementById("timersec").innerHTML=(00+":"+00)
+}
+
+
 
 
  
