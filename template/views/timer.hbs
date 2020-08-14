@@ -9,7 +9,7 @@
  <link rel="stylesheet"href="/css/style.css">
  
     </head>
-    <body>
+    <body onload="timer_load()">
       
         <script src="/js/time.js"></script>
         <p id="timer">00:00:00</p>
@@ -17,7 +17,7 @@
           <input id="hours" placeholder="hours" size=2>
   <input id="minute" placeholder="minutes" size=2>      
 <input id="seconds" placeholder="seconds" size=2>
-<button onclick="start()">start</button>
-<button onclick="pause()">pause</button></nobr>
+<button onclick="start()"id="timer_start">start</button>
+<button onclick="reset()"id="timer_reset">reset</button></nobr>
 </body>
 </html>
