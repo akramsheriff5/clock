@@ -6,7 +6,7 @@ var hours=now.getHours();
 var mins =now.getMinutes();
 var sec=now.getSeconds();
 
-document.getElementById("demo").innerHTML=hours+":"+mins+":"+sec;
+document.getElementById("demo").innerHTML=hours+":"+mins+":"+sec
 }
 
 setInterval(()=>{
@@ -69,47 +69,48 @@ document.getElementById("resetbtn").disabled=false;
 }
 
 // timer
-
-timer=()=>{
-    // var hours=document.getElementById("hours").value;
-// var minutes=document.getElementById("minutes").value;
-// var seconds=document.getElementById("sec").value;
-var minutes=document.getElementById("minutes").value;
-var seconds=minutes*60||document.getElementById("sec").value;
-
-    // document.getElementById("timersec").innerHTML=(minutes+":"+seconds)
-
-        
-           mysec=  setInterval(() => {
-            if(seconds>=0){
-                seconds=seconds--;
-                document.getElementById("timersec").innerHTML=("00"+":"+second)
-            }
-            },1000);
+start=()=>{
+    var  hr=document.getElementById('hours').value
+    var min=document.getElementById('minute').value
+    var sec=document.getElementById('seconds').value
     
     
-  
-
-         mymin=setInterval(() => {
-            if(minutes<=60&&minutes>=0){
-            if(seconds>=0){   
-                second=Math.floor(seconds%60)
-                minutes = Math.floor(seconds / 60); 
-                //  seconds - Math.round(minutes * 60);    
-            
-              seconds=seconds-1;
-              document.getElementById("timersec").innerHTML=(minutes+":"+second)
-            }
-        }
-            
-        },1000);
+    
+    this.state={
+        hours:hr,
+        minute:min,
+        seconds:sec
+    
     }
-    
-reset=()=>{
-clearInterval(mymin)
-clearInterval(mysec)
-document.getElementById("timersec").innerHTML=(00+":"+00)
+
+mytimer=setInterval(()=>{
+  this.state={
+ seconds:this.state.seconds===0?59:parseInt(this.state.seconds-1),
+ minute:this.state.hours>0&&this.state.minute===0?59:(this.state.seconds===0?parseInt(this.state.minute-1):this.state.minute),
+ hours: this.state.hours===0?0:(this.state.minutes===0?parseInt(this.state.hours-1):this.state.hours)
+
+
 }
+document.getElementById("timer").innerHTML=(this.state.hours+":"+this.state.minute+":"+this.state.seconds)
+
+
+
+},1000)
+
+if(this.state.seconds<=1) {
+    return clearInterval(mytimer)
+   }
+
+}
+
+
+
+
+
+
+
+
+    
 
 
 
