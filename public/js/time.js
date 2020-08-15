@@ -69,7 +69,6 @@ document.getElementById("resetbtn").disabled=false;
 }
 
 // timer
-
 var timer=0
 start=()=>{
     if(timer===0){
@@ -93,16 +92,15 @@ mytimer=setInterval(()=>{
  hours: this.state.hours===0?0:(this.state.minutes===0?parseInt(this.state.hours-1):this.state.hours)
 }
  document.getElementById("timer").innerHTML=(this.state.hours+":"+this.state.minute+":"+this.state.seconds)
- if(this.state.hours<1&&this.state.minute<1&&this.state.seconds<1) {
+ if(this.state.hours==0&&this.state.minute==0&&this.state.seconds<=0) {
      
      clearInterval(mytimer)
 }
+
 },1000)
 document.getElementById("timer_reset").disabled=false;
     }
-
 }
-
 reset=()=>{
     timer=1
     document.getElementById("timer").innerHTML="00:00:00"
@@ -114,7 +112,6 @@ reset=()=>{
 timer_load=()=>{
     document.getElementById("timer_reset").disabled=true;
 }
-
 
 
 

@@ -1,6 +1,7 @@
 const express=require('express')
 const path=require('path')
 const hbs=require('hbs')
+const swal=require('sweetalert')
 
 
 const pathway=path.join(__dirname,'../public')
