@@ -36,5 +36,5 @@ app.get('/timer',(req,res)=>{
     })
 })
  app.listen(host,()=>{
-     console.log('server is up'+host)
+     console.log('server is up')
  })
