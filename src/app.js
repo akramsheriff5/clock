@@ -1,21 +1,17 @@
 const express=require('express')
 const path=require('path')
-const hbs=require('hbs')
-const swal=require('sweetalert')
-
-
-const pathway=path.join(__dirname,'../public')
-const viewpath=path.join(__dirname,'../template/views')
-const partialspath=path.join(__dirname,'../template/partials')
-
 const app=express()
 const host=process.env.PORT||2000
-// setup handelbar engine and view location
+// path set pana html file ku
+const pathway=path.join(__dirname,'../public')
+
+
+
+// hbs concept set pana
 app.set('view engine','hbs')
-app.set('views',viewpath)
-hbs.registerPartials(partialspath)
-// setup static directory to serve
-app.use(express.static(pathway))
+
+//  express la html use pana
+ app.use(express.static(pathway))
 
  app.get('',(req,res)=>{
      res.render('index',{
