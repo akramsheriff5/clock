@@ -4,7 +4,7 @@
   "description": "time,stop watch,timer",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "nodemon src/app.js"
    
   },
   "author": "",
